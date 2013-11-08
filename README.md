@@ -23,16 +23,16 @@ Our original target was Ubuntu LTS releases, but due to a significant ram differ
 http://vagrantbox.es has a list of vagrant boxes available
 
 We currently use this box:
-
+    :::text
     https://bitbucket.org/ryanpcmcquen/zippybox/downloads/vagrant-wheezy64-zippy.box
 
 You may run this command to add the box manually, but vagrant up will download and enable it for you:
-
+    :::text
     vagrant box add wheezy64 https://bitbucket.org/ryanpcmcquen/zippybox/downloads/vagrant-wheezy64-zippy.box
 
 
 To install ansible from git use:
-
+    :::text
     sudo pip install git+https://github.com/ansible/ansible.git
 
 
@@ -47,7 +47,7 @@ You need:
 
 
 current command set to get rockin':
-
+    :::text
     git clone https://github.com/milojennings/zippy.git
     cd zippy
     ### unfortunately vagrant plugin install can only take one argument  :-(
@@ -66,7 +66,7 @@ current command set to get rockin':
 -use vagrant reload if changes are made to the Vagrantfile
 
 Note that vbguest may bark an error:
-
+    :::text
     Installing the Window System drivers ...fail!
     (Could not find the X.Org or XFree86 Window System.)
     An error occurred during installation of VirtualBox Guest Additions ...
@@ -75,14 +75,14 @@ There is nothing to worry about though, as our server is headless (display serve
 
 
 If you are getting this error on Mac OS:
-
+    :::text
     Progress state: NS_ERROR_FAILURE
     VBoxManage: error: Failed to create the host-only adapter
     VBoxManage: error: VBoxNetAdpCtl:
     Error while adding new interface: failed to open /dev/vboxnetctl: No such file or directory
 
 Try running this:
-
+    :::text
     sudo /Library/StartupItems/VirtualBox/VirtualBox restart
 
 ---
