@@ -10,7 +10,7 @@ Our original target was Ubuntu LTS releases, but due to a significant ram differ
 ##Notes!
 ---
 
-        :::python
+    :::text
         .--.           ____________     _        _      _       _
        |o_o |         |_____   ____|   | |      | |    \ \     / /
        |:_/ |              |  |        | |      | |     \ \   / /
