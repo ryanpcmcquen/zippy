@@ -34,9 +34,9 @@
         - linux-headers-amd64
         ## ubuntu uses linux-generic
         # - linux-generic
-        - nfs-common
-        - nfs-kernel-server
-        - rpcbind
+        # - nfs-common
+        # - nfs-kernel-server
+        # - rpcbind
         - curl
         - vim
         - htop
@@ -190,15 +190,17 @@
 
 
     - name: restart nginx
-      sudo: true
-      service: name=nginx state=restarted
+      command: sudo service nginx reload
+      # sudo: true
+      # service: name=nginx state=restarted
       tags:
         - nginx
 
 
     - name: restart php-fpm
-      sudo: true
-      service: name=php5-fpm state=restarted
+      command: sudo service php5-fpm reload
+      # sudo: true
+      # service: name=php5-fpm state=restarted
       tags:
         - php
 
