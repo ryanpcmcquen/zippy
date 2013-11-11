@@ -17,8 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
 
-  config.vm.box = "wheezy64"
-  config.vm.box_url = "https://bitbucket.org/roadsidemultimedia/zippy/downloads/zippy-wheezy64.box"
+  config.vm.box = "wheezy64-lemp"
+  config.vm.box_url = "http://softlayer-dal.dl.sourceforge.net/project/zippybox/zippy-wheezy64-lemp.box"
 
   # config.vm.box = "precise64"
   # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
@@ -35,6 +35,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # vb.customize ["modifyvm", :id, "--rtcuseutc", "on"]
     vb.customize ["modifyvm", :id, "--memory", "512"]
   end
+
+  # config.vm.provider :aws do |aws|
+  #   aws.access_key_id = "foo"
+  #   aws.secret_access_key = "bar"
+  #   aws.region = "us-west-2"
+
+  #   # Simple region config
+  #   # aws.region_config "us-west-2", :ami => "ami-12345678"
+
+
+  # end
 
   ## 10.0.0.0 to 10.255.255.255 are reserved for private networks, best to use one of those
   config.vm.network :private_network, ip: "10.20.30.40"

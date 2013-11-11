@@ -32,4 +32,3 @@ $env->database(array(
     'charset' => 'utf8'
 ));
 
->

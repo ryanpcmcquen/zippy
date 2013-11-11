@@ -25,39 +25,38 @@
     #   # when: {{ ansible_pkg_mgr }} == "apt"
 
   #   # combined install of these packages as vagrant reconnects for each task (this should speed things up!)
-    - name: install dev pkgs / EMP stack
-      sudo: true
-      apt: pkg={{ item }}
-      with_items:
-        # - build-essential
-        ## debian uses linux-headers-amd64
-        # - linux-headers-amd64
-        ## ubuntu uses linux-generic
-        # - linux-generic
-        # - nfs-common
-        # - nfs-kernel-server
-        # - rpcbind
-        - curl
-        - vim
-        - htop
-        - git
-        - mysql-server
-        # - mysql-client
-        - python-apt
-        - python-mysqldb
-        - nginx
-        - php5-fpm
-        - php5-mysql
-        - php5-cli
-        - php5-curl
-        - php5-mcrypt
-        - php5-sqlite
+    # - name: install dev pkgs / EMP stack
+    #   sudo: true
+    #   apt: pkg={{ item }}
+    #   with_items:
+    #     # - build-essential
+    #     ## debian uses linux-headers-amd64
+    #     # - linux-headers-amd64
+    #     ## ubuntu uses linux-generic
+    #     # - linux-generic
+    #     # - nfs-common
+    #     # - nfs-kernel-server
+    #     # - rpcbind
+    #     - curl
+    #     - vim
+    #     - htop
+    #     - git
+    #     - mysql-server
+    #     - python-apt
+    #     - python-mysqldb
+    #     - nginx
+    #     - php5-fpm
+    #     - php5-mysql
+    #     - php5-cli
+    #     - php5-curl
+    #     - php5-mcrypt
+    #     - php5-sqlite
 
-      tags:
-        - apt
-        - mysql
-        - nginx
-        - php
+    #   tags:
+    #     - apt
+    #     - mysql
+    #     - nginx
+    #     - php
 
 
 
@@ -103,7 +102,11 @@
     #     # this currently causes a known issue in ansible, fix coming soon, works in 1.4 from git
     # - name: configure php5 www.conf default
     #   sudo: true
-    #   template: src=configs/php-conf/www.j2 dest=/etc/php5/fpm/pool.d/www.conf owner=root group=root mode=0644 
+    #   template: src=configs/php-conf/www.j2 
+        # dest=/etc/php5/fpm/pool.d/www.conf
+        # owner=root
+        # group=root
+        # mode=0644
     #   tags:
     #     - php
 
@@ -118,7 +121,7 @@
     #   lineinfile: "dest=/etc/php5/fpm/pool.d/www.conf regexp='^listen = /var/run/php5-fpm.sock' line='listen = 127.0.0.1:9000'"
 
 
-      # not necessary with rewritten www.conf
+      # not necessary with rewritten www.conf, comment out when ansible 1.4 drops
     - name: Set phpfpm to listen on unix socket instead of TCP port
       sudo: true
       lineinfile: dest=/etc/php5/fpm/pool.d/www.conf
@@ -206,7 +209,7 @@
         - php
 
 
-    - name: change to pomander directory and do the pomander magic
+    - name: change to pomander directory and do the pomagic
       action: shell cd /var/www/pomander && sudo pom deploy:wordpress && sudo pom wp_config && sudo pom db:create
       tags:
         -pomander
