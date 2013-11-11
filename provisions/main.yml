@@ -190,22 +190,22 @@
 
 
     - name: restart nginx
-      sudo: true
-      action: shell sudo service nginx reload
+      # action: shell sudo service nginx reload
       # command: sudo service nginx reload
-      # service: name=nginx state=restarted
+      sudo: true
+      service: name=nginx state=restarted
       tags:
         - nginx
 
 
     - name: restart php-fpm
-      command: sudo service php5-fpm reload
-      # sudo: true
-      # service: name=php5-fpm state=restarted
+      # command: sudo service php5-fpm reload
+      sudo: true
+      service: name=php5-fpm state=restarted
       tags:
         - php
 
-          ### need to figure out database settings for pomander, then append && sudo pom db:create
+
     - name: change to pomander directory and do the pomander magic
       action: shell cd /var/www/pomander && sudo pom deploy:wordpress && sudo pom wp_config && sudo pom db:create
       tags:
