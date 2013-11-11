@@ -29,9 +29,9 @@
       sudo: true
       apt: pkg={{ item }}
       with_items:
-        - build-essential
+        # - build-essential
         ## debian uses linux-headers-amd64
-        - linux-headers-amd64
+        # - linux-headers-amd64
         ## ubuntu uses linux-generic
         # - linux-generic
         # - nfs-common

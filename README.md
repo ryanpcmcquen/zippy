@@ -25,12 +25,12 @@ http://vagrantbox.es has a list of vagrant boxes available
 We currently use this box:
 
     :::text
-    https://bitbucket.org/ryanpcmcquen/zippybox/downloads/vagrant-wheezy64-zippy.box
+    https://bitbucket.org/roadsidemultimedia/zippy/downloads/zippy-wheezy64.box
 
 You may run this command to add the box manually, but vagrant up will download and enable it for you:
 
     :::text
-    vagrant box add wheezy64 https://bitbucket.org/ryanpcmcquen/zippybox/downloads/vagrant-wheezy64-zippy.box
+    vagrant box add wheezy64 https://bitbucket.org/roadsidemultimedia/zippy/downloads/zippy-wheezy64.box
 
 
 To install ansible from git use:
