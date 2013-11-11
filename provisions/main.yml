@@ -190,8 +190,9 @@
 
 
     - name: restart nginx
-      command: sudo service nginx reload
-      # sudo: true
+      sudo: true
+      action: shell sudo service nginx reload
+      # command: sudo service nginx reload
       # service: name=nginx state=restarted
       tags:
         - nginx

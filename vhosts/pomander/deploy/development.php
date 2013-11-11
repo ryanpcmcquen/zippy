@@ -4,7 +4,7 @@ $env->load('Wordpress');
 $env->deploy_to('/var/www/custom.roadsideweb.dev/public_html');
 
 $env->wordpress(array(
-  'version'   => 'latest',
+  'version'   => '3.7.1',
   'db_prefix' => 'wp_',
   'base_uri'  => ''
 ));
