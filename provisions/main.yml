@@ -53,7 +53,7 @@
     #     - php5-sqlite
     #     - zip
     #     - unzip
-    #     - svn
+    #     - subversion
 
     #   tags:
     #     - apt
