@@ -9,8 +9,6 @@
 
   tasks:
 
-
-
   #   # by having a tag we can narrow down a specific group of tasks
   #   # during configuration.
     - name: update cache / upgrade pkgs
@@ -165,6 +163,21 @@
     #   tags:
     #     - php
 
+    - name: install phpmyadmin
+      sudo: true
+      apt: name=phpmyadmin state=installed
+
+    - name: set up phpmyadmin user
+      mysql_user: name=phpmyadmin 
+        password=''
+        priv=*.*:ALL state=present
+
+    - name: configure phpmyadmin
+      sudo: true
+      template: src=configs/phpmyadmin/phpmyadmin.conf.j2
+                dest=/etc/dbconfig-common/phpmyadmin.conf
+      notify: 
+        - update phpmyadmin            
 
     - name: install composer
       sudo: true
@@ -217,5 +230,10 @@
       tags:
         -pomander
 
+  handlers:
 
-
+    # After editing /etc/dbconfig-common/phpmyadmin.conf, this needs to be called
+    # This is based on instructions in the above file.
+    - name: update phpmyadmin 
+      sudo: true
+      command: /usr/sbin/dpkg-reconfigure --frontend noninteractive phpmyadmin
