@@ -88,7 +88,7 @@
       tags:
         - nginx
 
-    - name: setup custom.roadsideweb.com
+    - name: setup custom.roadsideweb.dev
       sudo: true
       template: src=configs/nginx-conf/custom.roadsideweb.com.j2 dest=/etc/nginx/sites-enabled/custom.roadsideweb.com owner=root group=root mode=0644
       tags:
