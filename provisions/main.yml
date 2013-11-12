@@ -126,13 +126,13 @@
     - name: Set phpfpm to listen on unix socket instead of TCP port
       sudo: true
       lineinfile: dest=/etc/php5/fpm/pool.d/www.conf
-        regexp='^listen = 127.0.0.1:9000'
+        regexp='^listen = '
         line='listen = /var/run/php5-fpm.sock'
 
     - name: Turn on PHP error reporting
       sudo: true
       lineinfile: dest=/etc/php5/fpm/php.ini
-        regexp='^display_errors = Off'
+        regexp='^display_errors'
         line='display_errors = On'
 
     # WP Fix im php.ini 
@@ -140,19 +140,19 @@
     - name: Turn off cgi.fix_pathinfo for WP compatability
       sudo: true
       lineinfile: dest=/etc/php5/fpm/php.ini
-        regexp='^;cgi.fix_pathinfo=1'
+        regexp='^cgi.fix_pathinfo'
         line='cgi.fix_pathinfo = 0;'
 
     - name: increase maximum upload size to 64mb for wordpress
       sudo: true
       lineinfile: dest=/etc/php5/fpm/php.ini
-        regexp='^upload_max_filesize = 2M'
+        regexp='^upload_max_filesize'
         line='upload_max_filesize = 64M;'
 
     - name: increase maximum post size to 64mb for wordpress
       sudo: true
       lineinfile: dest=/etc/php5/fpm/php.ini
-        regexp='^post_max_size = 8M'
+        regexp='^post_max_size'
         line='post_max_size = 64M;'
 
 
