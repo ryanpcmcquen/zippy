@@ -58,7 +58,6 @@ current command set to get rockin':
         ### if you need to install a pre-release or different verison, do it like so:
         ## vagrant plugin install vagrant-vbguest --plugin-version 0.10.0.pre1 --plugin-source https://rubygems.org
     vagrant plugin install vagrant-vbguest
-    vagrant plugin install vagrant-cachier
     vagrant plugin install vagrant-hostsupdater
     vagrant up
 
