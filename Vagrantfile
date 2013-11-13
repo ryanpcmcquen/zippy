@@ -90,6 +90,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.sudo = "true"
     ansible.host_key_checking = "false"
     # ansible.inventory_path = ""
+    
     ## Example tag that only processes tasks with the "nginx" tag
     ## Super handy for troubleshooting a specific area of functionality
     # ansible.tags = "nginx"
