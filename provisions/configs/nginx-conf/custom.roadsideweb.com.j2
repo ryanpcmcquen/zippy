@@ -22,10 +22,10 @@
 
 # Redirect everything to the main site. We use a separate server statement and NOT an if statement - see http://wiki.nginx.org/IfIsEvil
 
-server {
-  server_name  _;
-  rewrite ^ $scheme://custom.roadsideweb.dev$request_uri redirect;
-}
+# server {
+#   server_name  _;
+#   rewrite ^ $scheme://custom.roadsideweb.dev$request_uri redirect;
+# }
 
 server {
   server_name custom.roadsideweb.dev;
