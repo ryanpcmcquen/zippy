@@ -1,0 +1,4 @@
+# Database root account
+#######################
+
+mysql_root_password: 'root'
