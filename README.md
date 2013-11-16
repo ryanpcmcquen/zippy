@@ -22,7 +22,7 @@ Our original target was Ubuntu LTS releases, but due to a significant ram differ
 
 http://vagrantbox.es has a list of vagrant boxes available
 
-We currently use this box:
+We currently use our own custom box for local development:
 
     :::text
     http://softlayer-dal.dl.sourceforge.net/project/zippybox/zippy-wheezy64-lemp.box
@@ -33,11 +33,6 @@ You may run this command to add the box manually, but vagrant up will download a
     vagrant box add wheezy64-lemp http://softlayer-dal.dl.sourceforge.net/project/zippybox/zippy-wheezy64-lemp.box
 
 
-To install ansible from git use:
-
-    :::text
-    sudo pip install git+https://github.com/ansible/ansible.git
-
 
 ###################
 
@@ -46,18 +41,19 @@ You need:
 - git
 - virtualbox
 - vagrant
-- ansible (1.4.x)
+- ansible
 
 
 current command set to get rockin':
 
     :::text
-    git clone https://github.com/milojennings/zippy.git
+    git clone https://bitbucket.org/roadsidemultimedia/zippy.git
     cd zippy
     ### unfortunately vagrant plugin install can only take one argument  :-(
         ### if you need to install a pre-release or different verison, do it like so:
         ## vagrant plugin install vagrant-vbguest --plugin-version 0.10.0.pre1 --plugin-source https://rubygems.org
     vagrant plugin install vagrant-vbguest
+    vagrant plugin install vagrant-digitalocean
     vagrant plugin install vagrant-hostsupdater
     vagrant up
 
