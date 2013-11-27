@@ -1,9 +1,9 @@
 # ignore auto-generated vagrant stuff
 .vagrant
-vagrant_ansible_inventory_default
+vagrant_ansible_inventory_*
 
-vhosts/custom.roadsideweb.dev/public_html/wp-content/uploads
-vhosts/nginx_cache/*
+provisions/roles/docean/*
+vhosts/default/*
 
 # OS generated files #
 ######################

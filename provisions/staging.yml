@@ -2,12 +2,9 @@
 - name: install lnmp stack/wordpress
   hosts: all
   user: root
-  # sudo: true
   ### gather facts is necessary to use ansible variables (like the one that gives us the server ip)
   # gather_facts: no
 
-  # vars:
-  #   - isFirstRun: true
 
   vars_files:
     - variables.yml
@@ -17,5 +14,4 @@
     - mysql
     - nginx
     - php-fpm
-    - wordpress
 
