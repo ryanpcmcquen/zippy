@@ -52,11 +52,14 @@ current command set to get rockin':
     git clone https://bitbucket.org/roadsidemultimedia/zippy.git
     cd zippy
     ### unfortunately 'vagrant plugin install' can only take one argument  :-(
-    ### if you need to install a pre-release or different version, do it like so:
-    vagrant plugin install vagrant-vbguest --plugin-version 0.10.0.pre1 --plugin-source https://rubygems.org
-    ### vagrant plugin install vagrant-vbguest
+    vagrant plugin install vagrant-vbguest
     vagrant plugin install vagrant-digitalocean
     vagrant plugin install vagrant-hostsupdater
+    
+    
+    ### zippy works with stable versions, but if you feel like testing things
+    ### and need to install a pre-release or different version, do it like so:
+    ### vagrant plugin install vagrant-vbguest --plugin-version 0.10.0.pre1 --plugin-source https://rubygems.org
     
     ## for local:
     vagrant up local
