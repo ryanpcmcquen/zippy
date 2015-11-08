@@ -72,9 +72,9 @@ Current command set to get rockin':
 
 ### Vagrant usage:
 
-- vagrant up only needs to be done once (unless you reboot)
-- use vagrant provision if changes are made to the ansible playbook(s)
-- use vagrant reload if changes are made to the Vagrantfile
+- `vagrant up` only needs to be done once (unless you reboot)
+- use `vagrant provision` if changes are made to the ansible playbook(s)
+- use `vagrant reload` if changes are made to the `Vagrantfile`
 
 Note that vbguest may bark an error:
 
