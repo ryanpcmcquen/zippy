@@ -42,14 +42,14 @@ You need:
 - git
 - virtualbox + its extension pack
 - vagrant
-- ansible (you can install it with 'pip install ansible')
+- ansible (you can install it with `pip install ansible`)
 
 
 
-current command set to get rockin':
+Current command set to get rockin':
 
     :::text
-    git clone https://bitbucket.org/roadsidemultimedia/zippy.git
+    git clone git@github.com:ryanpcmcquen/zippy.git
     cd zippy
     ### unfortunately 'vagrant plugin install' can only take one argument  :-(
     vagrant plugin install vagrant-vbguest
@@ -70,7 +70,7 @@ current command set to get rockin':
 
 ###################
 
-###Vagrant usage:
+### Vagrant usage:
 
 - vagrant up only needs to be done once (unless you reboot)
 - use vagrant provision if changes are made to the ansible playbook(s)
